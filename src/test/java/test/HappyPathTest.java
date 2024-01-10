@@ -1,6 +1,6 @@
 package test;
 
-import data.data;
+import data.DataGenerator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-class test {
+class HappyPathTest {
     @BeforeEach
     void setup() {
         open("http://localhost:9999");
@@ -20,11 +20,11 @@ class test {
 
     @Test
     void shouldChangeMeetingDate() {
-        data.UserInfo user = data.registration.generateUser("ru");
+        DataGenerator.UserInfo user = DataGenerator.Registration.generateUser("ru");
         int daysFirst = 4;
-        String firstMeetingDate = data.generateDate(daysFirst);
+        String firstMeetingDate = DataGenerator.generateDate(daysFirst);
         int daysSecond = 7;
-        String secondMeetingDate = data.generateDate(daysSecond);
+        String secondMeetingDate = DataGenerator.generateDate(daysSecond);
         $("[data-test-id='city'] input").sendKeys(user.getCity());
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.DELETE);
         $("[data-test-id='date'] input").sendKeys(firstMeetingDate);

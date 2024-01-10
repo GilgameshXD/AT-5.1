@@ -8,8 +8,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.Random;
 
-public class data {
-    private data() {
+public class DataGenerator {
+    private DataGenerator() {
     }
 
     public static String generateDate(int shift) {
@@ -115,8 +115,8 @@ public class data {
         return faker.phoneNumber().phoneNumber();
     }
 
-    public static class registration {
-        private registration() {
+    public static class Registration {
+        private Registration() {
 
         }
 
