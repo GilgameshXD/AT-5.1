@@ -1,7 +1,8 @@
-package Test;
+package test;
 
-import Data.Data;
+import data.data;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 
 import java.time.Duration;
@@ -11,19 +12,19 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-class Test {
+class test {
     @BeforeEach
     void setup() {
         open("http://localhost:9999");
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void shouldChangeMeetingDate() {
-        Data.UserInfo user = Data.Registration.generateUser("ru");
+        data.UserInfo user = data.registration.generateUser("ru");
         int daysFirst = 4;
-        String firstMeetingDate = Data.generateDate(daysFirst);
+        String firstMeetingDate = data.generateDate(daysFirst);
         int daysSecond = 7;
-        String secondMeetingDate = Data.generateDate(daysSecond);
+        String secondMeetingDate = data.generateDate(daysSecond);
         $("[data-test-id='city'] input").sendKeys(user.getCity());
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.DELETE);
         $("[data-test-id='date'] input").sendKeys(firstMeetingDate);

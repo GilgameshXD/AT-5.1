@@ -1,4 +1,4 @@
-package Data;
+package data;
 
 import com.github.javafaker.Faker;
 import lombok.Value;
@@ -8,8 +8,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.Random;
 
-public class Data {
-    private Data() {
+public class data {
+    private data() {
     }
 
     public static String generateDate(int shift) {
@@ -115,8 +115,8 @@ public class Data {
         return faker.phoneNumber().phoneNumber();
     }
 
-    public static class Registration {
-        private Registration() {
+    public static class registration {
+        private registration() {
 
         }
 
